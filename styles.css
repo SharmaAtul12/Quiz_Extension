@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Extension UI Reset and Base Styles */
+.ai-form-helper-answer-box {
+  margin-top: 16px;
+  padding: 16px;
+  background: linear-gradient(to right, rgba(236, 253, 245, 0.9), #ffffff);
+  border-left: 4px solid #10b981;
+  border-radius: 8px;
+  color: #065f46;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  word-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.05);
+  animation: fadeInPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes fadeInPop {
+  0% { opacity: 0; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.ai-form-helper-answer-box.error {
+  background: linear-gradient(to right, #fef2f2, #ffffff);
+  border-left-color: #ef4444;
+  color: #991b1b;
+}
+
+.ai-form-helper-answer-header {
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.8;
+}
+
+/* Spinner for Loading State */
+.ai-spinner {
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  animation: ai-spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes ai-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Highlight style for the correct option */
+.ai-form-helper-highlight {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(16, 185, 129, 0.1) !important;
+  border-radius: 8px;
+  outline: 2px solid #10b981 !important;
+  transition: all 0.3s ease;
+  animation: pulse-success 2.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulse-success {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* SVG Icon */
+.ai-icon-sparkle {
+  width: 16px;
+  height: 16px;
+}
+
+/* Floating Action Button for Solve All */
+#ai-form-helper-solve-all-container {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 99999;
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: 'Inter', sans-serif;
+}
+
+#ai-form-helper-solve-all-btn {
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 16px 28px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.25);
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#ai-form-helper-solve-all-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(236, 72, 153, 0.4);
+}
+
+#ai-form-helper-solve-all-btn:disabled {
+  background: #cbd5e1;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+  color: #f8fafc;
+}
+
+/* Full Page Blur Overlay */
+#ai-form-helper-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#ai-form-helper-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ai-overlay-content {
+  background: #ffffff;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#ai-form-helper-overlay.active .ai-overlay-content {
+  transform: translateY(0);
+}
+
+.ai-overlay-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #8b5cf6;
+  border-radius: 50%;
+  animation: ai-spin 1s linear infinite;
+}
