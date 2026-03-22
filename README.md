@@ -23,7 +23,7 @@ Navigating educational or repetitive assessment forms can be tedious. This proje
 
 ## 🎥 Demo
 
-**[📺 Watch the full video demonstration of AI Form Helper on LinkedIn!](🔗_PASTE_YOUR_LINKEDIN_POST_LINK_HERE)**
+**[📺 Watch the full video demonstration of AI Form Helper on LinkedIn!](https://www.linkedin.com/posts/atul-sharma-dev_webdevelopment-javascript-chromeextension-activity-7441357792466305024-zqLB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF-tV-8BAynjBNdKFwqn7wYcgfSyxTvRLxY)**
 
 ---
 
@@ -119,7 +119,7 @@ Your privacy and security are paramount.
 
 - **Core:** JavaScript (Vanilla ES6+), HTML5, CSS3
 - **Framework:** Chrome Extensions API (Manifest V3)
-- **AI Integration:** Google Gemini API (`gemini-1.5-flash`)
+- **AI Integration:** Google Gemini API (`gemini-2.5-flash`)
 
 ---
 
